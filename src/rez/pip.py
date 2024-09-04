@@ -282,7 +282,7 @@ def pip_install_package(source_name, pip_version=None, python_version=None,
         _log(buf.getvalue())
 
     # Build pip commandline
-    cmd = [py_exe, "-m", "pip", "install"]
+    cmd = [os.path.realpath(py_exe), "-m", "pip", "install"]
 
     _extra_args = extra_args or config.pip_extra_args or []
 
